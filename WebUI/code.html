@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content=" The Sum of All Fears Coding Challenge">
+    <meta name="author" content="Julio Segarra">
+
+    <title>The Sum of All Fears</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="Content/bootstrap.min.css">
+    <!-- Prism CSS and theme css -->
+    <link rel="stylesheet" href="Content/prism.css">
+    <link rel="stylesheet" href="Content/prism-synthwave84.css">
+    <!-- Custom CSS -->
+    <link rel="icon" type="image/x-icon" href="Icons/favicon.ico" />
+    <link rel="stylesheet" href="Content/custom_styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">The Sum of All Fears</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="solve.html">Try It!</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="code.html">Code</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Git</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.juliosegarra.com/">Portfolio</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Blog Post/YouTube Explanation</a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h1 class="mt-5">The Sum of All Fears Code</h1>
+                
+                <!-- TABS  -->
+                <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-javascript-tab" data-toggle="pill" href="#pills-javascript" role="tab" aria-controls="pills-javascript" aria-selected="true">JavaScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-html-tab" data-toggle="pill" href="#pills-html" role="tab" aria-controls="pills-html" aria-selected="false">HTML</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TABBED CONTENT -->
+        <div class="row text-center tab-content line-numbers" id="pills-tabContent">
+            <div class="col"></div>
+            <div class="col-10 tab-pane fade show active" id="pills-javascript" role="tabpanel" aria-labelledby="pills-javascript-tab">
+                <pre class=" language-javascript">
+                    <code class="language-javascript"> 
+                        document.getElementById("mathBtn").addEventListener("click", function () {
+                            const num1 = parseInt(document.getElementById("num1").value);
+                            const num2 = parseInt(document.getElementById("num2").value);
+                            const num3 = parseInt(document.getElementById("num3").value);
+                            const num4 = parseInt(document.getElementById("num4").value);
+                            const numK = parseInt(document.getElementById("numK").value);
+                            const fearArray = [num1, num2, num3, num4, numK];
+                            const output = document.getElementById("output");
+                            output.innerHTML = "";
+                        
+                            for (let i = 0; i < fearArray.length - 1; i++) {
+                                for (let j = i + 1; j < fearArray.length - 1; j++) {
+                                    if (fearArray[i] + fearArray[j] === numK) {
+                                        output.innerHTML = `${fearArray[i]} and ${
+                                            fearArray[j]
+                                        } are two numbers in our array that add up to ${numK}!`;
+                                        return;
+                                    }
+                                }
+                            }
+                        
+                            if (
+                                isNaN(num1) ||
+                                isNaN(num2) ||
+                                isNaN(num3) ||
+                                isNaN(num4) ||
+                                isNaN(numK)
+                            ) {
+                                output.innerHTML = "";
+                            } else {
+                                output.innerHTML = `There are no two numbers in our array that add up to ${numK}!`;
+                            }
+                        });
+                    </code>
+                </pre>
+            </div>
+            <div class="col-10 tab-pane fade" id="pills-html" role="tabpanel" aria-labelledby="pills-html-tab">
+                <pre class="line-numbers language-markup">
+                    <code class="language-markup">
+                        &lt;div class="container"&gt;
+                            
+                            &lt;!-- Intro Row --&gt;
+                            &lt;div class="row"&gt;
+                                &lt;div class="col-lg-12 text-center"&gt;
+                                    &lt;h1 class="mt-5"&gt;The Sum of All Fears&lt;/h1&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;!-- Instructions for user input --&gt;
+                            &lt;div class="row text-center"&gt;
+                                &lt;div class="col"&gt;
+                                    &lt;div class="h5"&gt;
+                                        Input four numbers and a number K, then click the button.
+                                        There will then be output verifying
+                                        whether any two numbers from the list of four add up
+                                        to the number K.
+                                        &lt;br&gt;
+                                        &lt;br&gt;
+                                        Example:
+                                        &lt;br&gt;
+                                        given [10, 15, 3, 7] and K of 17, return
+                                        true since 10 + 7 is 1
+                                        &lt;br&gt;
+                                        &lt;br&gt;
+                                        Pattern:
+                                        &lt;br&gt;
+                                        [1st] + [2nd or 3rd or 4th] or [2nd] + ... = K; True or False?
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;!-- Input ids: bld1-5 --&gt;
+                            &lt;div class="form-inline row"&gt;
+                                &lt;div class="col"&gt;
+                                    &lt;div class="row p-3"&gt;
+                                        &lt;input type="text" class="col m-1" id="num1" autocomplete="off" placeholder="1st"&gt;
+                                        &lt;input type="text" class="col m-1" id="num2" autocomplete="off" placeholder="2nd"&gt;
+                                        &lt;input type="text" class="col m-1" id="num3" autocomplete="off" placeholder="3rd"&gt;
+                                        &lt;input type="text" class="col m-1" id="num4" autocomplete="off" placeholder="4th"&gt;
+                                        &lt;input type="text" class="col m-1 bg-warning" id="numK" autocomplete="off" placeholder="K"&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;!-- Input submission id="mathBtn" --&gt;
+                            &lt;div class="row text-center"&gt;
+                                &lt;div class="col"&gt;
+                                    &lt;input type="button" name="mathBtn" id="mathBtn" class="btn-warning btn-block p-2 text-center" value="Click Me"&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;!--  id = output --&gt;
+                            &lt;div class="row m-top-3"&gt;
+                                &lt;div class="col"&gt;
+                                    &lt;div class="p-2 jumbotron text-black text-center" id="output"&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                        &lt;/div&gt; 
+                    </code>
+                </pre>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="Scripts/jquery-3.5.1.slim.min.js"></script>
+    <script src="Scripts/prism.js"></script>
+    <script src="Scripts/popper.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/custom_scripts.js"></script>
+</body>
+
+</html>

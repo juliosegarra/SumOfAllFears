@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="The Sum of All Fears Coding Challenge">
+    <meta name="author" content="Julio Segarra">
+
+    <title>The Sum of All Fears</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="Content/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="icon" type="image/x-icon" href="Icons/favicon.ico" />
+    <link rel="stylesheet" href="Content/custom_styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">The Sum of All Fears</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="solve.html">Try It!</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="code.html">Code</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Git</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.juliosegarra.com/">Portfolio</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Blog Post/YouTube Explanation</a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+    
+        <!-- Intro Row -->
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1 class="mt-5">The Sum of All Fears</h1>
+            </div>
+        </div>
+
+        <!-- Instructions for user input -->
+        <div class="row text-center">
+            <div class="col">
+                <div class="h5">
+                    Input four numbers and a number K, then click the button.
+                    There will then be output verifying
+                    whether any two numbers from the list of four add up
+                    to the number K.
+                    <br>
+                    <br>
+                    Example:
+                    <br>
+                    given [10, 15, 3, 7] and K of 17, return
+                    true since 10 + 7 is 1
+                    <br>
+                    <br>
+                    Pattern:
+                    <br>
+                    [1st] + [2nd or 3rd or 4th] or [2nd] + ... = K; True or False?
+                </div>
+            </div>
+        </div>
+
+        <!-- Input ids: bld1-5 -->
+        <div class="form-inline row">
+            <div class="col">
+                <div class="row p-3">
+                    <input type="text" class="col m-1" id="num1" autocomplete="off" placeholder="1st">
+                    <input type="text" class="col m-1" id="num2" autocomplete="off" placeholder="2nd">
+                    <input type="text" class="col m-1" id="num3" autocomplete="off" placeholder="3rd">
+                    <input type="text" class="col m-1" id="num4" autocomplete="off" placeholder="4th">
+                    <input type="text" class="col m-1 bg-warning" id="numK" autocomplete="off" placeholder="K">
+                </div>
+            </div>
+        </div>
+
+        <!-- Input submission id="mathBtn" -->
+        <div class="row text-center">
+            <div class="col">
+                <input type="button" name="mathBtn" id="mathBtn" class="btn-warning btn-block p-2 text-center" value="Click Me">
+            </div>
+        </div>
+
+        <!--  id = output -->
+        <div class="row m-top-3">
+            <div class="col">
+                <div class="p-2 jumbotron text-black text-center" id="output">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="Scripts/jquery-3.5.1.slim.min.js"></script>
+    <script src="Scripts/popper.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/custom_scripts.js"></script>
+</body>
+
+</html>

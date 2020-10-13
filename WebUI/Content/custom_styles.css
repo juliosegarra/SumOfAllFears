@@ -1,0 +1,26 @@
+body {
+    background-color: linen;
+}
+
+body, html {
+    height: 100%;
+}
+
+/* .bg {
+    background-image: url(#);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+a {
+  text-decoration: none !important;
+}
+
+@media only screen and (max-width: 1370px) {
+  /* For mobile phones: */
+  .col-10 {
+    min-width: 100% !important;
+  }
+}
